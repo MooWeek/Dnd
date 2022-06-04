@@ -76,10 +76,23 @@ public enum Background
 
 public enum Alignment
 {
-    
+    LawfulGood,
+    NeutralGood,
+    ChaoticGood,
+    LawfulNeutral,
+    Neutral,
+    ChaoticNeutral,
+    LawfulEvil,
+    NeutralEvil,
+    ChaoticEvil
 }
 
 public enum Dice
 {
-    
+    D4 = 1,
+    D6 = 2,
+    D8 = 3,
+    D10 = 4,
+    D12 = 5,
+    D20 = 6
 }
