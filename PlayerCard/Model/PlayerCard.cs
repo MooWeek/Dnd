@@ -9,11 +9,61 @@ public record PlayerCard
     public CharacterInfo? CharacterInfo { get; set; }
 
     public static Characteristic Strength { get; set; } =
-        new Characteristic(
+        new (
             "Strength",
             new List<Skill>
             {
                 new ("Athletics")
+            });
+
+    public static Characteristic Dexterity { get; set; } =
+        new (
+            "Dexterity",
+            new List<Skill>
+            {
+                new ("Acrobatics"),
+                new ("Sleight of Hand"),
+                new ("Stealth")
+            });
+
+    public static Characteristic Constitution { get; set; } =
+        new(
+            "Constitution",
+            new List<Skill>());
+
+    public static Characteristic Intelligence { get; set; } =
+        new (
+            "Intelligence",
+            new List<Skill>
+            {
+                new ("Arcana"),
+                new ("History"),
+                new ("Investigation"),
+                new ("Nature"),
+                new ("Religion")
+            });
+
+    public static Characteristic Wisdom { get; set; } =
+        new (
+            "Wisdom",
+            new List<Skill>
+            {
+                new ("Animal Handling"),
+                new ("Insight"),
+                new ("Medicine"),
+                new ("Perception"),
+                new ("Survival")
+            });
+
+    public static Characteristic Charisma { get; set; } =
+        new (
+            "Charisma",
+            new List<Skill>
+            {
+                new ("Deception"),
+                new ("Intimidation"),
+                new ("Performance"),
+                new ("Persuasion")
             });
     
     public int ArmorClass { get; set; }
@@ -44,11 +94,17 @@ public record Characteristic(string? Name, List<Skill>? Skills)
     public string? Name { get; }
 
     public List<Skill>? Skills { get; }
+    
+    public int Value { get; set; }
+    
+    public int ValueModificator { get; set; }
 }
 
 public record Skill(string? Name)
 {
     public string? Name { get; }
+    
+    public int Modificator { get; set; }
     
     public bool IsHave { get; set; }
 }
